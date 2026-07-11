@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deal of the Week Pro: 3 ready-to-send real estate emails every Monday | Systemology</title>
+<meta name="description" content="Every Monday, get 3 finished Deal of the Week emails written for your market: Just Listed, Turnkey, and Luxury. Pick one, paste it in, hit send. $47 a month.">
+<style>
+  /* ===== BAM Bold brand tokens (dark executive canvas, crimson sacred CTA) ===== */
+  :root{
+    --crimson:#ad3457; --crimson-bg:rgba(173,52,87,0.1); --crimson-border:rgba(173,52,87,0.2); --crimson-ink:#ffffff;
+    --bg:#09090f; --panel:#13141f; --panel2:#1b1c2c; --panel3:#222338; --border:#36375a; --text:#f2f2fc; --muted:#abacc8; --light:#6e6f92;
+    --green:#22c55e; --green-bg:rgba(34,197,94,0.1);
+    --blue:#60a5fa; --blue-bg:rgba(96,165,250,0.1);
+    --amber:#fbbf24; --amber-bg:rgba(251,191,36,0.1);
+    --serif: Georgia, 'Times New Roman', Times, serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, system-ui;
+    --maxw: 760px;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ background:var(--bg); color:var(--text); font-family:var(--sans); font-size:17px; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 20px; }
+  a{ color:var(--crimson); }
+  h1,h2,h3{ font-family:var(--serif); font-weight:700; color:var(--text); }
+  p{ margin:0 0 16px; color:var(--muted); }
+  .lede{ font-size:19px; color:var(--text); }
+  ul{ margin:0 0 16px 20px; color:var(--muted); }
+  li{ margin-bottom:8px; }
+  strong{ color:var(--text); }
+  section{ padding:56px 0; border-bottom:1px solid var(--border); }
+  section:last-of-type{ border-bottom:none; }
+
+  /* ── eyebrow / kicker ── */
+  .kicker{ display:inline-block; font-family:var(--sans); font-weight:700; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--crimson); background:var(--crimson-bg); border:1px solid var(--crimson-border); padding:6px 14px; border-radius:99px; margin-bottom:20px; }
+
+  /* ── hero ── */
+  header.hero{ padding:64px 0 48px; text-align:center; background:radial-gradient(circle at 50% 0%, rgba(173,52,87,0.12), transparent 60%); }
+  header.hero h1{ font-size:clamp(28px,5.2vw,44px); line-height:1.25; margin-bottom:18px; }
+  header.hero h1 .num{ color:var(--crimson); }
+  header.hero .deck{ font-family:var(--sans); font-size:clamp(16px,2.4vw,19px); color:var(--muted); max-width:600px; margin:0 auto 8px; }
+
+  /* ── video slot ── */
+  .vsl-frame{ position:relative; aspect-ratio:16/9; background:linear-gradient(160deg,var(--panel2),var(--panel3)); border:1px solid var(--border); border-radius:14px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .vsl-frame::before{ content:""; position:absolute; inset:0; background:radial-gradient(circle at 50% 45%, rgba(173,52,87,0.18), transparent 65%); }
+  .vsl-inner{ position:relative; text-align:center; padding:24px; }
+  .play{ width:64px; height:64px; border-radius:50%; background:var(--crimson); color:var(--crimson-ink); display:flex; align-items:center; justify-content:center; font-size:22px; margin:0 auto 16px; box-shadow:0 0 0 10px rgba(173,52,87,0.14); }
+  .vsl-inner .label{ font-family:var(--sans); font-weight:700; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--text); margin-bottom:6px; }
+  .vsl-inner .note{ font-size:14px; color:var(--light); max-width:340px; margin:0 auto; }
+
+  /* ── section headers ── */
+  h2{ font-size:clamp(24px,3.6vw,32px); margin-bottom:20px; }
+  h2 .num{ color:var(--crimson); }
+
+  /* ── product grid (what you get) ── */
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:24px 0; }
+  .card{ background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:20px; }
+  .card .tag{ font-family:var(--sans); font-weight:700; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--crimson-ink); background:var(--crimson); display:inline-block; padding:4px 10px; border-radius:99px; margin-bottom:12px; }
+  .card h3{ font-size:18px; margin-bottom:8px; }
+  .card p{ font-size:14.5px; margin-bottom:0; }
+
+  /* ── how it works steps ── */
+  .steps{ counter-reset:step; margin:24px 0; }
+  .step{ display:flex; gap:16px; padding:18px 0; border-top:1px solid var(--border); }
+  .step:first-child{ border-top:none; }
+  .step .n{ font-family:var(--serif); font-weight:700; font-size:28px; color:var(--crimson); flex-shrink:0; width:44px; }
+  .step .body h3{ font-size:17px; margin-bottom:4px; }
+  .step .body p{ margin-bottom:0; font-size:14.5px; }
+
+  /* ── proof list ── */
+  .proof{ list-style:none; margin:0 0 16px 0; display:grid; gap:10px; }
+  .proof li{ display:flex; gap:12px; align-items:flex-start; background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:0; }
+  .proof .mark{ font-family:var(--serif); font-weight:700; color:var(--crimson); flex-shrink:0; }
+
+  /* ── CTA button ── */
+  .cta-wrap{ text-align:center; margin:28px 0 8px; }
+  .cta{ display:inline-block; font-family:var(--sans); font-weight:700; font-size:16px; letter-spacing:.01em; color:var(--crimson-ink); background:var(--crimson); text-decoration:none; padding:16px 32px; border-radius:10px; box-shadow:0 8px 24px rgba(173,52,87,0.3); }
+  .cta:hover{ background:#943049; }
+  .cta-sub{ font-size:13px; color:var(--light); margin-top:12px; }
+
+  /* ── pricing ── */
+  .price-card{ background:var(--panel); border:1px solid var(--crimson-border); border-radius:14px; padding:32px; text-align:center; margin:24px 0; }
+  .price-card .amt{ font-family:var(--serif); font-weight:700; font-size:56px; color:var(--text); line-height:1; }
+  .price-card .amt span{ font-size:18px; font-family:var(--sans); font-weight:700; color:var(--muted); }
+  .price-list{ list-style:none; text-align:left; max-width:340px; margin:20px auto; }
+  .price-list li{ display:flex; gap:10px; margin-bottom:10px; color:var(--muted); font-size:14.5px; }
+  .price-list .mark{ color:var(--green); flex-shrink:0; }
+
+  /* ── FAQ ── */
+  .faq-item{ border-top:1px solid var(--border); padding:18px 0; }
+  .faq-item:first-child{ border-top:none; }
+  .faq-item h3{ font-size:16.5px; margin-bottom:6px; font-family:var(--sans); }
+  .faq-item p{ font-size:14.5px; margin-bottom:0; }
+
+  /* ── disclaimer ── */
+  .disclaimer{ font-size:12.5px; color:var(--light); background:var(--panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin-top:20px; }
+
+  /* ── footer ── */
+  footer{ padding:40px 0 60px; text-align:center; }
+  footer .brand{ font-family:var(--serif); font-weight:700; color:var(--text); margin-bottom:8px; }
+  footer .links a{ color:var(--muted); text-decoration:underline; margin:0 8px; font-size:13px; }
+
+  @media (max-width:720px){
+    section{ padding:40px 0; }
+    .grid3{ grid-template-columns:1fr; }
+    header.hero{ padding:48px 0 36px; }
+    .cta{ display:block; width:100%; }
+    .price-card{ padding:24px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!--
+HEADLINE CANDIDATES (chosen one is live below):
+1. "3 Ready-to-Send Deal-of-the-Week Emails For Your Market. Every Monday. $47 a Month." [CHOSEN]
+2. "The Weekly Real Estate Email Your List Actually Replies To, Done For You For $47 a Month."
+3. "Stop Writing Your Weekly Deal Email. We Write 3, For Your Market, Every Monday."
+-->
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">For Real Estate Agents</span>
+    <h1><span class="num">3</span> Ready-to-Send Deal-of-the-Week Emails For Your Market. Every Monday. <span class="num">$47</span> a Month.</h1>
+    <p class="deck">Your list should get an email every week that makes them reply, not delete. Now it does, and you never write a word.</p>
+  </div>
+</header>
+
+<section id="vsl">
+  <div class="wrap">
+    <div class="vsl-frame">
+      <div class="vsl-inner">
+        <div class="play">&#9658;</div>
+        <div class="label">Watch: How It Works</div>
+        <p class="note">2 minute walkthrough, video coming soon. Everything you need is in the letter below.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="problem">
+  <div class="wrap">
+    <h2>Doing This Yourself Every Week Is A Job</h2>
+    <p class="lede">Sending one good Deal of the Week email takes more than people think.</p>
+    <p>First you have to find a listing worth sending, not just the newest one in the MLS feed. Then you verify the details so you're not sending a buyer bad numbers. Then you write it so it sounds like you, not like a bored MLS blast and not like AI wrote it. Then you do it again next week. And the week after that.</p>
+    <p>Call it 3 to 5 hours a week once you count sourcing, drafting, and rewriting the subject line until it stops sounding like everyone else's. The email itself isn't the hard part. Doing it every single week without missing one is the part that dies first.</p>
+  </div>
+</section>
+
+<section id="what-you-get">
+  <div class="wrap">
+    <h2>Every Monday, 3 Finished Emails Land In Your Inbox</h2>
+    <p class="lede">One for Just Listed. One for Turnkey. One for Luxury. All written for your market.</p>
+    <div class="grid3">
+      <div class="card">
+        <span class="tag">Just Listed</span>
+        <h3>Fresh on the market</h3>
+        <p>A new listing in your market with a reason to send it now, before someone else does.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Turnkey</span>
+        <h3>Move-in ready</h3>
+        <p>The home that needs nothing done to it, written for buyers who don't want a project.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Luxury</span>
+        <h3>The top of your market</h3>
+        <p>Your high-end listing, priced and framed for the buyer who's shopping that tier.</p>
+      </div>
+    </div>
+    <p>Each email ships with a proven subject line format, a first-person opener in your voice, real numbers pulled from the actual listing, and one call to action built to get a reply. You read all three, pick the one that fits your list this week, paste it into your email platform, and hit send. That's the whole job.</p>
+    <div class="cta-wrap">
+      <a class="cta" href="https://buy.stripe.com/cNiaEW6TfaY70vLccHd7q0E" target="_blank" rel="noopener noreferrer">Get My First 3 Emails</a>
+      <p class="cta-sub">$47 a month. Cancel anytime.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works">
+  <div class="wrap">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <div class="body">
+          <h3>Subscribe for $47 a month</h3>
+          <p>No setup fee, no contract. Cancel with one click whenever you want.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <div class="body">
+          <h3>Tell us your market</h3>
+          <p>Your city plus 2 to 3 zip codes. Takes about 2 minutes.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <div class="body">
+          <h3>Your first 3 emails arrive Monday</h3>
+          <p>Just Listed, Turnkey, and Luxury, written for your market and ready to send.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="credibility">
+  <div class="wrap">
+    <h2>Built On A System That Already Runs Every Week</h2>
+    <p>This runs on the same weekly system Leo Chen uses for his own real estate list in Orange County, refined over dozens of real sends.</p>
+    <ul class="proof">
+      <li><span class="mark">9/10</span> Every subject line has to clear a 9 out of 10 bar before it ships. Anything lower gets rewritten.</li>
+      <li><span class="mark">8.5/10</span> Every email has to clear an 8.5 out of 10 bar before it ships. Same rule.</li>
+      <li><span class="mark">0</span> Nothing ships weak. An email that misses the bar gets rewritten or held, never sent as-is.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="diy-compare">
+  <div class="wrap">
+    <h2>Want To Build This Yourself Instead?</h2>
+    <p>There's a free kit that walks you through building your own version of this system: the sourcing, the writing rules, the send pipeline, all of it. <a href="https://systemology-agency.github.io/aimm-funnel/deal-of-the-week-kit/" target="_blank" rel="noopener noreferrer">See the free build-it-yourself kit</a>.</p>
+    <p>Budget a weekend to set it up. Then plan on an hour or two a week after that to keep it running: sourcing listings, writing, grading each one against the quality bar, and rewriting the subject line when it falls short.</p>
+    <p>$47 a month skips the build and skips the upkeep. Three finished emails, done, every Monday.</p>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <h2>$47 A Month. Cancel Anytime.</h2>
+    <div class="price-card">
+      <div class="amt">$47<span>/month</span></div>
+      <ul class="price-list">
+        <li><span class="mark">&#10003;</span> No setup fee</li>
+        <li><span class="mark">&#10003;</span> First delivery within a week of signing up</li>
+        <li><span class="mark">&#10003;</span> Cancel anytime, one click, no call required</li>
+      </ul>
+      <a class="cta" href="https://buy.stripe.com/cNiaEW6TfaY70vLccHd7q0E" target="_blank" rel="noopener noreferrer">Start My Subscription for $47/mo</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>Questions</h2>
+
+    <div class="faq-item">
+      <h3>What if my market isn't a big city?</h3>
+      <p>Any US city works. Tell us your city and 2 to 3 zip codes when you sign up and we build from there.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What if I don't like one of the emails?</h3>
+      <p>Reply and tell us what was off. We adjust your profile so the next batch fits better.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I edit the emails before I send them?</h3>
+      <p>Yes. The moment they land, they're yours. Change a line, swap a name, make them sound even more like you.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do these cause any MLS or compliance problems?</h3>
+      <p>Every email cites public listing information and includes a line to verify details with the listing agent before you send. You're responsible for following your own local advertising and MLS rules.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I cancel?</h3>
+      <p>Anytime, one click, no call needed.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Who actually writes these?</h3>
+      <p>An AI system trained on dozens of real sends. Every email is graded against a quality bar before it reaches you, and nothing ships without clearing it.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>When does my first batch of emails arrive?</h3>
+      <p>Within a week of signing up and telling us your market. After that, every Monday.</p>
+    </div>
+
+    <div class="cta-wrap">
+      <a class="cta" href="https://buy.stripe.com/cNiaEW6TfaY70vLccHd7q0E" target="_blank" rel="noopener noreferrer">Get Started for $47/mo</a>
+    </div>
+  </div>
+</section>
+
+<section id="final-cta">
+  <div class="wrap" style="text-align:center;">
+    <h2>Your List Is Waiting On This Week's Email</h2>
+    <p class="lede">$47 a month. 3 finished emails every Monday. Cancel anytime.</p>
+    <div class="cta-wrap">
+      <a class="cta" href="https://buy.stripe.com/cNiaEW6TfaY70vLccHd7q0E" target="_blank" rel="noopener noreferrer">Start Now</a>
+    </div>
+    <div class="disclaimer">
+      Listing information in generated emails is drawn from public sources. Verify details with the listing agent before you send. You are responsible for complying with your local MLS and advertising rules.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">Systemology Agency</div>
+    <div class="links">
+      <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms</a>
+      <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
