@@ -35,6 +35,9 @@
   .kicker{ display:inline-block; font-family:var(--sans); font-weight:700; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--crimson); background:var(--crimson-bg); border:1px solid var(--crimson-border); padding:6px 14px; border-radius:99px; margin-bottom:20px; }
 
   /* ── hero ── */
+  .hero-top{ display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap; margin-bottom:20px; }
+  .hero-top .kicker{ margin-bottom:0; }
+  .hero-logo{ width:150px; height:auto; display:block; }
   header.hero{ padding:64px 0 48px; text-align:center; background:radial-gradient(circle at 50% 0%, rgba(173,52,87,0.12), transparent 60%); }
   header.hero h1{ font-size:clamp(28px,5.2vw,44px); line-height:1.25; margin-bottom:18px; }
   header.hero h1 .num{ color:var(--crimson); }
@@ -125,7 +128,10 @@
 
 <header class="hero">
   <div class="wrap">
-    <span class="kicker">For Real Estate Agents</span>
+    <div class="hero-top">
+      <img class="hero-logo" src="systemology-logo-white.svg" alt="Systemology">
+      <span class="kicker">For Real Estate Agents</span>
+    </div>
     <h1>Get <span class="num">3</span> Ready-to-Send Deal of the Week Emails For Your Market, Automatically.</h1>
     <p class="deck">A lifetime nurture asset for your database.<br>Every week your people get an email that gives them a reason to reply and engage with you about real estate, and you never write a word.</p>
   </div>
