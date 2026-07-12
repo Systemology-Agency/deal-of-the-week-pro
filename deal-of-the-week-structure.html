@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>The Deal of the Week Structure | Deal of the Week Pro</title>
+<meta name="description" content="The exact email framework by Sharran Srivatsaa that every Deal of the Week Pro email follows: subject line, first-person hook, body, one CTA, sign-off.">
+<style>
+  /* ===== BAM Bold brand tokens (matches index.html) ===== */
+  :root{
+    --crimson:#ad3457; --crimson-bg:rgba(173,52,87,0.1); --crimson-border:rgba(173,52,87,0.2); --crimson-ink:#ffffff;
+    --bg:#09090f; --panel:#13141f; --panel2:#1b1c2c; --panel3:#222338; --border:#36375a; --text:#f2f2fc; --muted:#abacc8; --light:#6e6f92;
+    --green:#22c55e; --green-bg:rgba(34,197,94,0.1);
+    --serif: Georgia, 'Times New Roman', Times, serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, system-ui;
+    --maxw: 760px;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ background:var(--bg); color:var(--text); font-family:var(--sans); font-size:17px; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 20px; }
+  a{ color:var(--crimson); }
+  h1,h2,h3{ font-family:var(--serif); font-weight:700; color:var(--text); }
+  p{ margin:0 0 16px; color:var(--muted); }
+  .lede{ font-size:19px; color:var(--text); }
+  strong{ color:var(--text); }
+  section{ padding:56px 0; border-bottom:1px solid var(--border); }
+  section:last-of-type{ border-bottom:none; }
+
+  /* kicker pill */
+  .kicker{ display:inline-block; font-family:var(--sans); font-weight:700; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--crimson); background:var(--crimson-bg); border:1px solid var(--crimson-border); padding:6px 14px; border-radius:99px; margin-bottom:20px; }
+
+  /* hero */
+  header.hero{ padding:64px 0 48px; text-align:center; background:radial-gradient(circle at 50% 0%, rgba(173,52,87,0.12), transparent 60%); }
+  header.hero h1{ font-size:clamp(28px,5.2vw,44px); line-height:1.25; margin-bottom:18px; }
+  header.hero .deck{ font-family:var(--sans); font-size:clamp(16px,2.4vw,19px); color:var(--muted); max-width:620px; margin:0 auto; }
+
+  /* section headers */
+  h2{ font-size:clamp(24px,3.6vw,32px); margin-bottom:20px; }
+  h2 .num{ color:var(--crimson); }
+
+  /* why-it-works cards */
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:24px 0 0; }
+  .card{ background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:20px; }
+  .card .tag{ font-family:var(--sans); font-weight:700; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--crimson-ink); background:var(--crimson); display:inline-block; padding:4px 10px; border-radius:99px; margin-bottom:12px; }
+  .card h3{ font-size:18px; margin-bottom:8px; }
+  .card p{ font-size:14.5px; margin-bottom:0; }
+
+  /* anatomy steps */
+  .steps{ margin:24px 0 0; }
+  .step{ display:flex; gap:16px; padding:18px 0; border-top:1px solid var(--border); }
+  .step:first-child{ border-top:none; }
+  .step .n{ font-family:var(--serif); font-weight:700; font-size:28px; color:var(--crimson); flex-shrink:0; width:44px; }
+  .step .body h3{ font-size:17px; margin-bottom:4px; }
+  .step .body p{ margin-bottom:0; font-size:14.5px; }
+  .step .body .fmt{ display:inline-block; font-family:var(--serif); color:var(--text); background:var(--panel2); border:1px solid var(--border); border-radius:6px; padding:2px 10px; font-size:14px; margin:6px 0; }
+
+  /* example email box */
+  .email-box{ background:var(--panel); border:1px solid var(--crimson-border); border-radius:14px; padding:26px 24px; margin:28px 0 0; }
+  .email-box .part{ margin-bottom:18px; }
+  .email-box .part:last-child{ margin-bottom:0; }
+  .email-box .lbl{ display:block; font-family:var(--sans); font-weight:700; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--crimson); margin-bottom:4px; }
+  .email-box .txt{ font-family:var(--serif); font-size:16px; color:var(--text); line-height:1.6; }
+  .email-box .txt p{ color:var(--text); margin:0 0 10px; font-family:var(--serif); font-size:16px; }
+  .email-box .txt p:last-child{ margin-bottom:0; }
+  .email-note{ font-size:13px; color:var(--light); margin-top:12px; }
+
+  /* do / don't lists */
+  .proof{ list-style:none; margin:24px 0 0; display:grid; gap:10px; }
+  .proof li{ display:flex; gap:12px; align-items:flex-start; background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:14px 16px; font-size:15px; color:var(--muted); }
+  .proof li strong{ color:var(--text); }
+  .proof .mark{ font-family:var(--serif); font-weight:700; color:var(--crimson); flex-shrink:0; }
+  .proof.dont .mark{ color:var(--light); }
+
+  /* footer */
+  footer{ padding:40px 0 60px; text-align:center; }
+  footer .powered-by{ font-family:var(--sans); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--light); margin-bottom:10px; }
+  footer .brand-logo{ width:min(320px, 72vw); height:auto; margin-bottom:12px; }
+  footer .links a{ color:var(--muted); text-decoration:underline; margin:0 8px; font-size:13px; }
+
+  @media (max-width:720px){
+    section{ padding:40px 0; }
+    .grid3{ grid-template-columns:1fr; }
+    header.hero{ padding:48px 0 36px; }
+    .email-box{ padding:20px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">The Framework</span>
+    <h1>The Deal of the Week Structure</h1>
+    <p class="deck">The email framework built by Sharran Srivatsaa. Every email Deal of the Week Pro delivers follows this structure exactly: what goes in, what stays out, and why it earns replies.</p>
+  </div>
+</header>
+
+<section id="why-it-works">
+  <div class="wrap">
+    <h2>Why It Works</h2>
+    <p class="lede">One curated deal, every week, written like a note from a friend who knows the market.</p>
+    <div class="grid3">
+      <div class="card">
+        <span class="tag">Positioning</span>
+        <h3>You become the insider</h3>
+        <p>A weekly deal-curation email positions you as the person who sees the market first. Not a blast. A pick.</p>
+      </div>
+      <div class="card">
+        <span class="tag">The Goal</span>
+        <h3>Replies, not clicks</h3>
+        <p>The email is built to start conversations, not drive showings or link clicks. The reply is the win. Everything else follows from a conversation.</p>
+      </div>
+      <div class="card">
+        <span class="tag">The Compounding</span>
+        <h3>Consistency is the asset</h3>
+        <p>Week after week, your list learns to expect you. That is a lifetime nurture asset, and it compounds.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="anatomy">
+  <div class="wrap">
+    <h2>The Anatomy</h2>
+    <p class="lede">Five parts, in order. Every part has one job.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <div class="body">
+          <h3>Subject line</h3>
+          <p>The format is locked:</p>
+          <p><span class="fmt">Deal of the week in [City]: [one concrete specific]</span></p>
+          <p>The specific is a real number, a real feature, or an off-market hook. Never filler. "Deal of the week in Irvine: 4-bed off-market at $835K" earns the open. "Deal of the week!" does not.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <div class="body">
+          <h3>Line 1</h3>
+          <p>A first-person hook only you could write: a personal rule, a take, a real reaction to the property. It always ends the same way, handing off to the deal:</p>
+          <p><span class="fmt">... This week's deal is ...</span></p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <div class="body">
+          <h3>Body</h3>
+          <p>Concrete numbers and features. One idea per line. And the language matches the price tier: an entry-level condo and a luxury listing never sound the same. Entry talks payment and getting in. Luxury talks light, materials, and views, never "bargain."</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <div class="body">
+          <h3>One CTA</h3>
+          <p>A single low-friction reply trigger: "reply and I'll send the details and photos." Never "book a tour." The ask is small on purpose, so the reply is easy.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">5</div>
+        <div class="body">
+          <h3>Sign-off</h3>
+          <p>Just your name. No title block, no motivational quote, no "warm regards."</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="email-box">
+      <div class="part">
+        <span class="lbl">Subject line</span>
+        <div class="txt">Deal of the week in Truckee: 3-bed cabin at $749K, 12 minutes to the lifts</div>
+      </div>
+      <div class="part">
+        <span class="lbl">Line 1, the hook</span>
+        <div class="txt">I have a rule: if I would not send it to a friend, it does not make this email. This one made the cut. This week's deal is a 3-bed mountain cabin on a third of an acre.</div>
+      </div>
+      <div class="part">
+        <span class="lbl">Body, one idea per line</span>
+        <div class="txt">
+          <p>Kitchen remodeled in 2023.</p>
+          <p>Wraparound deck facing the pines.</p>
+          <p>1,860 square feet, and it lives bigger than that.</p>
+          <p>$749K in a market where the median is well above $900K.</p>
+        </div>
+      </div>
+      <div class="part">
+        <span class="lbl">One CTA, reply trigger</span>
+        <div class="txt">Want the photos and full details? Reply <strong>CABIN</strong> and I'll send everything over.</div>
+      </div>
+      <div class="part">
+        <span class="lbl">Sign-off</span>
+        <div class="txt">Alex</div>
+      </div>
+    </div>
+    <p class="email-note">Illustrative example. No address, no MLS number, no link. The reader has exactly one way to get more: reply.</p>
+  </div>
+</section>
+
+<section id="dos">
+  <div class="wrap">
+    <h2>The Do's</h2>
+    <ul class="proof">
+      <li><span class="mark">&#10003;</span><span><strong>Specifics beat hype.</strong> A real number, feature, or place name out-pulls any adjective.</span></li>
+      <li><span class="mark">&#10003;</span><span><strong>One concrete number in every subject.</strong> Price, beds, distance, year. Something the reader can picture.</span></li>
+      <li><span class="mark">&#10003;</span><span><strong>Write like one person to one person.</strong> First person, to a single reader, in your own voice.</span></li>
+      <li><span class="mark">&#10003;</span><span><strong>A different structure every week.</strong> Never the same template twice. The framework stays, the shape changes.</span></li>
+      <li><span class="mark">&#10003;</span><span><strong>Frame off-market deals as "off-market."</strong> Then hold back the details and let the reply do the selling.</span></li>
+      <li><span class="mark">&#10003;</span><span><strong>Send every single week.</strong> Consistency is the strategy. The list you nurture for a year is the one that produces.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="donts">
+  <div class="wrap">
+    <h2>The Don'ts</h2>
+    <ul class="proof dont">
+      <li><span class="mark">&#10007;</span><span><strong>Never put the address, MLS number, or listing link in the email.</strong> It kills the reply loop. The conversation is the product.</span></li>
+      <li><span class="mark">&#10007;</span><span><strong>No "Hey" openers.</strong> Start with the hook, not filler.</span></li>
+      <li><span class="mark">&#10007;</span><span><strong>No hype words.</strong> No "dream home," no bare "must see," no "priced to sell" without a concrete reason.</span></li>
+      <li><span class="mark">&#10007;</span><span><strong>No spam symbols.</strong> No !!!, no $$$, no ALL CAPS shouting.</span></li>
+      <li><span class="mark">&#10007;</span><span><strong>No fake deadlines.</strong> A real "before Thursday" works. Urgency that never expires trains people to ignore you.</span></li>
+      <li><span class="mark">&#10007;</span><span><strong>Never ask for a showing or tour in the first touch.</strong> The first ask is information. The tour is the earned next step.</span></li>
+      <li><span class="mark">&#10007;</span><span><strong>Don't skip weeks.</strong> One missed week costs more than one mediocre send.</span></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="powered-by">Powered by</div>
+    <img class="brand-logo" src="systemology-logo-white.svg" alt="Systemology Agency">
+    <div class="links">
+      <a href="index.html" target="_blank" rel="noopener noreferrer">Deal of the Week Pro</a>
+      <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms</a>
+      <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
