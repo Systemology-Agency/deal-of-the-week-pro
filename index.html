@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deal of the Week Pro: 3 ready-to-send real estate emails every Monday | Systemology</title>
-<meta name="description" content="Every Monday, get 3 finished Deal of the Week emails written for your market: Just Listed, Turnkey, and Luxury. Pick one, paste it in, hit send. $47 a month.">
+<title>Deal of the Week Pro: 3 ready-to-send real estate emails every Tuesday | Systemology</title>
+<meta name="description" content="Every Tuesday, get 3 finished Deal of the Week emails written for your market: Just Listed, Turnkey, and Luxury. Pick one, paste it in, hit send. $47 a month.">
 <style>
   /* ===== BAM Bold brand tokens (dark executive canvas, crimson sacred CTA) ===== */
   :root{
@@ -59,6 +59,15 @@
   .card h3{ font-size:18px; margin-bottom:8px; }
   .card p{ font-size:14.5px; margin-bottom:0; }
 
+  /* ── manual-process flow diagram ── */
+  .flow{ margin:24px 0; }
+  .flow-step{ display:flex; gap:14px; align-items:center; background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:12px 16px; min-width:0; }
+  .flow-step p, .flow-total p{ margin:0; font-size:14.5px; min-width:0; }
+  .flow-time{ font-family:var(--serif); font-weight:700; font-size:15px; color:var(--crimson); flex-shrink:0; width:82px; }
+  .flow-arrow{ text-align:center; color:var(--crimson); font-size:15px; line-height:1.4; padding-left:32px; }
+  .flow-total{ display:flex; gap:14px; align-items:center; background:var(--crimson-bg); border:1px solid var(--crimson-border); border-radius:10px; padding:12px 16px; }
+  .flow-total p{ font-weight:700; color:var(--text); }
+
   /* ── how it works steps ── */
   .steps{ counter-reset:step; margin:24px 0; }
   .step{ display:flex; gap:16px; padding:18px 0; border-top:1px solid var(--border); }
@@ -80,7 +89,7 @@
 
   /* ── pricing ── */
   .price-card{ background:var(--panel); border:1px solid var(--crimson-border); border-radius:14px; padding:32px; text-align:center; margin:24px 0; }
-  .price-card .amt{ font-family:var(--serif); font-weight:700; font-size:56px; color:var(--text); line-height:1; }
+  .price-card .amt{ font-family:var(--serif); font-weight:700; font-size:56px; color:var(--text); line-height:1.15; }
   .price-card .amt span{ font-size:18px; font-family:var(--sans); font-weight:700; color:var(--muted); }
   .price-list{ list-style:none; text-align:left; max-width:340px; margin:20px auto; }
   .price-list li{ display:flex; gap:10px; margin-bottom:10px; color:var(--muted); font-size:14.5px; }
@@ -97,7 +106,7 @@
 
   /* ── footer ── */
   footer{ padding:40px 0 60px; text-align:center; }
-  footer .brand{ font-family:var(--serif); font-weight:700; color:var(--text); margin-bottom:8px; }
+  footer .brand-logo{ height:56px; width:auto; margin-bottom:10px; }
   footer .links a{ color:var(--muted); text-decoration:underline; margin:0 8px; font-size:13px; }
 
   @media (max-width:720px){
@@ -111,18 +120,13 @@
 </head>
 <body>
 
-<!--
-HEADLINE CANDIDATES (chosen one is live below):
-1. "3 Ready-to-Send Deal-of-the-Week Emails For Your Market. Every Monday. $47 a Month." [CHOSEN]
-2. "The Weekly Real Estate Email Your List Actually Replies To, Done For You For $47 a Month."
-3. "Stop Writing Your Weekly Deal Email. We Write 3, For Your Market, Every Monday."
--->
+<!-- Headline set per Leo's Lavish annotation 2026-07-11 (uid 1) -->
 
 <header class="hero">
   <div class="wrap">
     <span class="kicker">For Real Estate Agents</span>
-    <h1><span class="num">3</span> Ready-to-Send Deal-of-the-Week Emails For Your Market. Every Monday. <span class="num">$47</span> a Month.</h1>
-    <p class="deck">Your list should get an email every week that makes them reply, not delete. Now it does, and you never write a word.</p>
+    <h1>Get <span class="num">3</span> Ready-to-Send Deal of the Week Emails For Your Market, Automatically. Every Tuesday. <span class="num">$47</span> a Month.</h1>
+    <p class="deck">Lifetime nurture for your database. Every week your people get an email that gives them a reason to reply and engage with you about real estate, and you never write a word.</p>
   </div>
 </header>
 
@@ -142,14 +146,26 @@ HEADLINE CANDIDATES (chosen one is live below):
   <div class="wrap">
     <h2>Doing This Yourself Every Week Is A Job</h2>
     <p class="lede">Sending one good Deal of the Week email takes more than people think.</p>
-    <p>First you have to find a listing worth sending, not just the newest one in the MLS feed. Then you verify the details so you're not sending a buyer bad numbers. Then you write it so it sounds like you, not like a bored MLS blast and not like AI wrote it. Then you do it again next week. And the week after that.</p>
-    <p>Call it 3 to 5 hours a week once you count sourcing, drafting, and rewriting the subject line until it stops sounding like everyone else's. The email itself isn't the hard part. Doing it every single week without missing one is the part that dies first.</p>
+    <p>Here's the manual process a typical agent runs every single week:</p>
+    <div class="flow">
+      <div class="flow-step"><div class="flow-time">~10 min</div><p>Dig through the MLS feed and the portals for a listing actually worth sending, not just the newest one.</p></div>
+      <div class="flow-arrow">&#8595;</div>
+      <div class="flow-step"><div class="flow-time">~5 min</div><p>Verify the numbers: price, status, days on market, the details a buyer will call you on.</p></div>
+      <div class="flow-arrow">&#8595;</div>
+      <div class="flow-step"><div class="flow-time">~10 min</div><p>Write the email so it sounds like you, not a bored MLS blast and not AI.</p></div>
+      <div class="flow-arrow">&#8595;</div>
+      <div class="flow-step"><div class="flow-time">~5-10 min</div><p>Rewrite the subject line until it stops sounding like everyone else's.</p></div>
+      <div class="flow-arrow">&#8595;</div>
+      <div class="flow-step"><div class="flow-time">~5 min</div><p>Proof it, fix it, schedule the send.</p></div>
+      <div class="flow-arrow">&#8595;</div>
+      <div class="flow-total"><div class="flow-time">30-45 min</div><p>Every week. And the consistency is what dies first.</p></div>
+    </div>
   </div>
 </section>
 
 <section id="what-you-get">
   <div class="wrap">
-    <h2>Every Monday, 3 Finished Emails Land In Your Inbox</h2>
+    <h2>Instead: Every Tuesday, 3 Finished Emails Land In Your Inbox</h2>
     <p class="lede">One for Just Listed. One for Turnkey. One for Luxury. All written for your market.</p>
     <div class="grid3">
       <div class="card">
@@ -170,8 +186,8 @@ HEADLINE CANDIDATES (chosen one is live below):
     </div>
     <p>Each email ships with a proven subject line format, a first-person opener in your voice, real numbers pulled from the actual listing, and one call to action built to get a reply. You read all three, pick the one that fits your list this week, paste it into your email platform, and hit send. That's the whole job.</p>
     <div class="cta-wrap">
-      <a class="cta" href="https://buy.stripe.com/cNiaEW6TfaY70vLccHd7q0E" target="_blank" rel="noopener noreferrer">Get My First 3 Emails</a>
-      <p class="cta-sub">$47 a month. Cancel anytime.</p>
+      <a class="cta" href="https://buy.stripe.com/cNiaEW6TfaY70vLccHd7q0E" target="_blank" rel="noopener noreferrer">Start My Free 7-Day Trial</a>
+      <p class="cta-sub">Free for 7 days, then $47 a month. Cancel anytime.</p>
     </div>
   </div>
 </section>
@@ -191,13 +207,13 @@ HEADLINE CANDIDATES (chosen one is live below):
         <div class="n">2</div>
         <div class="body">
           <h3>Tell us your market</h3>
-          <p>Your city plus 2 to 3 zip codes. Takes about 2 minutes.</p>
+          <p>Up to 5 cities or zip codes. Takes about 2 minutes.</p>
         </div>
       </div>
       <div class="step">
         <div class="n">3</div>
         <div class="body">
-          <h3>Your first 3 emails arrive Monday</h3>
+          <h3>Your first 3 emails arrive Tuesday</h3>
           <p>Just Listed, Turnkey, and Luxury, written for your market and ready to send.</p>
         </div>
       </div>
@@ -208,35 +224,25 @@ HEADLINE CANDIDATES (chosen one is live below):
 <section id="credibility">
   <div class="wrap">
     <h2>Built On A System That Already Runs Every Week</h2>
-    <p>This runs on the same weekly system Leo Chen uses for his own real estate list in Orange County, refined over dozens of real sends.</p>
+    <p>This runs on the same weekly system that runs for agents and teams across the country, refined over dozens of real sends. Our team monitors the system and keeps optimizing it to find the best properties in your area each week.</p>
     <ul class="proof">
-      <li><span class="mark">9/10</span> Every subject line has to clear a 9 out of 10 bar before it ships. Anything lower gets rewritten.</li>
-      <li><span class="mark">8.5/10</span> Every email has to clear an 8.5 out of 10 bar before it ships. Same rule.</li>
-      <li><span class="mark">0</span> Nothing ships weak. An email that misses the bar gets rewritten or held, never sent as-is.</li>
+      <li><span class="mark">&lt;3 min</span> You review the 3 emails, pick the one you like, and copy-paste it into your CRM to send. What used to take 30 to 45 minutes gets done in less than 3.</li>
     </ul>
-  </div>
-</section>
-
-<section id="diy-compare">
-  <div class="wrap">
-    <h2>Want To Build This Yourself Instead?</h2>
-    <p>There's a free kit that walks you through building your own version of this system: the sourcing, the writing rules, the send pipeline, all of it. <a href="https://systemology-agency.github.io/aimm-funnel/deal-of-the-week-kit/" target="_blank" rel="noopener noreferrer">See the free build-it-yourself kit</a>.</p>
-    <p>Budget a weekend to set it up. Then plan on an hour or two a week after that to keep it running: sourcing listings, writing, grading each one against the quality bar, and rewriting the subject line when it falls short.</p>
-    <p>$47 a month skips the build and skips the upkeep. Three finished emails, done, every Monday.</p>
   </div>
 </section>
 
 <section id="pricing">
   <div class="wrap">
-    <h2>$47 A Month. Cancel Anytime.</h2>
+    <h2>Free For 7 Days. Then $47 A Month.</h2>
     <div class="price-card">
-      <div class="amt">$47<span>/month</span></div>
+      <div class="amt">$47<span>/month after your free week</span></div>
       <ul class="price-list">
+        <li><span class="mark">&#10003;</span> 7 day free trial, nothing charged today</li>
         <li><span class="mark">&#10003;</span> No setup fee</li>
         <li><span class="mark">&#10003;</span> First delivery within a week of signing up</li>
         <li><span class="mark">&#10003;</span> Cancel anytime, one click, no call required</li>
       </ul>
-      <a class="cta" href="https://buy.stripe.com/cNiaEW6TfaY70vLccHd7q0E" target="_blank" rel="noopener noreferrer">Start My Subscription for $47/mo</a>
+      <a class="cta" href="https://buy.stripe.com/cNiaEW6TfaY70vLccHd7q0E" target="_blank" rel="noopener noreferrer">Start My Free 7-Day Trial</a>
     </div>
   </div>
 </section>
@@ -246,13 +252,18 @@ HEADLINE CANDIDATES (chosen one is live below):
     <h2>Questions</h2>
 
     <div class="faq-item">
+      <h3>How does the free trial work?</h3>
+      <p>You get real deliveries for 7 days and nothing is charged today. Cancel before the trial ends and you pay nothing. Stay, and billing starts at $47 a month.</p>
+    </div>
+
+    <div class="faq-item">
       <h3>What if my market isn't a big city?</h3>
-      <p>Any US city works. Tell us your city and 2 to 3 zip codes when you sign up and we build from there.</p>
+      <p>Any US market works. Tell us up to 5 cities or zip codes when you sign up and we build from there.</p>
     </div>
 
     <div class="faq-item">
       <h3>What if I don't like one of the emails?</h3>
-      <p>Reply and tell us what was off. We adjust your profile so the next batch fits better.</p>
+      <p>You can edit the drafts we send you however you like, and if one misses, reply and tell us what was off so we adjust your profile. Every email follows the exact blueprint, frameworks, and rules laid out by Sharran Srivatsaa.</p>
     </div>
 
     <div class="faq-item">
@@ -262,26 +273,21 @@ HEADLINE CANDIDATES (chosen one is live below):
 
     <div class="faq-item">
       <h3>Do these cause any MLS or compliance problems?</h3>
-      <p>Every email cites public listing information and includes a line to verify details with the listing agent before you send. You're responsible for following your own local advertising and MLS rules.</p>
+      <p>No listing address is publicized in the email, by design. Your readers reply to you for the actual listing information or a showing, which is the whole point. You're responsible for following your own local advertising and MLS rules.</p>
     </div>
 
     <div class="faq-item">
       <h3>Can I cancel?</h3>
-      <p>Anytime, one click, no call needed.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Who actually writes these?</h3>
-      <p>An AI system trained on dozens of real sends. Every email is graded against a quality bar before it reaches you, and nothing ships without clearing it.</p>
+      <p>Anytime, one click, no call needed. Cancel during the trial and you pay nothing.</p>
     </div>
 
     <div class="faq-item">
       <h3>When does my first batch of emails arrive?</h3>
-      <p>Within a week of signing up and telling us your market. After that, every Monday.</p>
+      <p>Within a week of signing up and telling us your market. After that, every Tuesday.</p>
     </div>
 
     <div class="cta-wrap">
-      <a class="cta" href="https://buy.stripe.com/cNiaEW6TfaY70vLccHd7q0E" target="_blank" rel="noopener noreferrer">Get Started for $47/mo</a>
+      <a class="cta" href="https://buy.stripe.com/cNiaEW6TfaY70vLccHd7q0E" target="_blank" rel="noopener noreferrer">Start My Free 7-Day Trial</a>
     </div>
   </div>
 </section>
@@ -289,9 +295,9 @@ HEADLINE CANDIDATES (chosen one is live below):
 <section id="final-cta">
   <div class="wrap" style="text-align:center;">
     <h2>Your List Is Waiting On This Week's Email</h2>
-    <p class="lede">$47 a month. 3 finished emails every Monday. Cancel anytime.</p>
+    <p class="lede">Free for 7 days, then $47 a month. 3 finished emails every Tuesday. Cancel anytime.</p>
     <div class="cta-wrap">
-      <a class="cta" href="https://buy.stripe.com/cNiaEW6TfaY70vLccHd7q0E" target="_blank" rel="noopener noreferrer">Start Now</a>
+      <a class="cta" href="https://buy.stripe.com/cNiaEW6TfaY70vLccHd7q0E" target="_blank" rel="noopener noreferrer">Start My Free Trial</a>
     </div>
     <div class="disclaimer">
       Listing information in generated emails is drawn from public sources. Verify details with the listing agent before you send. You are responsible for complying with your local MLS and advertising rules.
@@ -301,7 +307,7 @@ HEADLINE CANDIDATES (chosen one is live below):
 
 <footer>
   <div class="wrap">
-    <div class="brand">Systemology Agency</div>
+    <img class="brand-logo" src="systemology-logo-white.svg" alt="Systemology Agency">
     <div class="links">
       <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms</a>
       <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
