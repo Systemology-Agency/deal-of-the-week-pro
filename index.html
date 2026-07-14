@@ -116,11 +116,20 @@
   .price-list li{ display:flex; gap:10px; margin-bottom:10px; color:var(--muted); font-size:16px; }
   .price-list .mark{ color:var(--green); flex-shrink:0; }
 
-  /* ── FAQ ── */
-  .faq-item{ border-top:1px solid var(--border); padding:18px 0; }
-  .faq-item:first-child{ border-top:none; }
-  .faq-item h3{ font-size:19px; margin-bottom:6px; font-family:var(--sans); }
-  .faq-item p{ font-size:16px; margin-bottom:0; }
+  /* ── FAQ (accordion cards) ── */
+  .faq{ display:grid; gap:12px; margin-top:8px; }
+  .faq details{ background:var(--panel); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+  .faq details[open]{ border-color:var(--crimson-border); }
+  .faq summary{ list-style:none; cursor:pointer; display:flex; align-items:center; gap:16px; padding:18px 22px; font-family:var(--sans); font-weight:700; font-size:19px; color:var(--text); }
+  .faq summary::-webkit-details-marker{ display:none; }
+  .faq summary:hover{ background:var(--panel2); }
+  .faq .mark{ flex-shrink:0; width:30px; height:30px; border-radius:50%; background:var(--crimson-bg); border:1px solid var(--crimson-border); color:var(--crimson); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:19px; line-height:1; }
+  .faq .mark::before{ content:"+"; }
+  .faq details[open] .mark::before{ content:"\2212"; }
+  .faq details[open] summary{ border-bottom:1px solid var(--border); }
+  .faq .faq-a{ padding:16px 22px 20px 68px; }
+  .faq .faq-a p{ font-size:16px; margin-bottom:10px; }
+  .faq .faq-a p:last-child{ margin-bottom:0; }
 
   /* ── disclaimer ── */
   .disclaimer{ font-size:14px; color:var(--light); background:var(--panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin-top:20px; }
@@ -341,45 +350,63 @@
   <div class="wrap">
     <h2>Questions</h2>
 
-    <div class="faq-item">
-      <h3>How does the free trial work?</h3>
-      <p>You get real deliveries for 7 days and nothing is charged today. Cancel before the trial ends and you pay nothing. Stay, and billing starts at $47 a month.</p>
-    </div>
+    <div class="faq">
+      <details open>
+        <summary><span class="mark"></span>How does the free trial work?</summary>
+        <div class="faq-a">
+          <p>You get real deliveries for 7 days and nothing is charged today. Cancel before the trial ends and you pay nothing. Stay, and billing starts at $47 a month.</p>
+        </div>
+      </details>
 
-    <div class="faq-item">
-      <h3>What if my market isn't a big city?</h3>
-      <p>Any US market works. Tell us up to 5 cities or zip codes when you sign up and we build from there.</p>
-    </div>
+      <details>
+        <summary><span class="mark"></span>What if my market isn't a big city?</summary>
+        <div class="faq-a">
+          <p>Any US market works. Tell us up to 5 cities or zip codes when you sign up and we build from there.</p>
+        </div>
+      </details>
 
-    <div class="faq-item">
-      <h3>What if my database is cold or hasn't heard from me in a while?</h3>
-      <p>That is the exact list this is built for. A quiet database is not a dead one, it has just been trained by silence. The first send breaks that silence, and the weekly cadence rebuilds the habit. Replies build over weeks as your list learns you show up every Tuesday with something worth reading.</p>
-    </div>
+      <details>
+        <summary><span class="mark"></span>What if my database is cold or hasn't heard from me in a while?</summary>
+        <div class="faq-a">
+          <p>That is the exact list this is built for. A quiet database is not a dead one, it has just been trained by silence. The first send breaks that silence, and the weekly cadence rebuilds the habit. Replies build over weeks as your list learns you show up every Tuesday with something worth reading.</p>
+        </div>
+      </details>
 
-    <div class="faq-item">
-      <h3>What if I don't like one of the emails?</h3>
-      <p>You can edit the drafts we send you however you like, and if one misses, reply and tell us what was off so we adjust your profile. Every email follows the exact blueprint, frameworks, and strategy laid out by Sharran Srivatsaa.</p>
-    </div>
+      <details>
+        <summary><span class="mark"></span>What if I don't like one of the emails?</summary>
+        <div class="faq-a">
+          <p>You can edit the drafts we send you however you like, and if one misses, reply and tell us what was off so we adjust your profile. Every email follows the exact blueprint, frameworks, and strategy laid out by Sharran Srivatsaa.</p>
+        </div>
+      </details>
 
-    <div class="faq-item">
-      <h3>Can I edit the emails before I send them?</h3>
-      <p>Yes. The moment they land, they're yours. Change a line, swap a name, make them sound even more like you. You can even send the other 2 emails on the other days of the week.</p>
-    </div>
+      <details>
+        <summary><span class="mark"></span>Can I edit the emails before I send them?</summary>
+        <div class="faq-a">
+          <p>Yes. The moment they land, they're yours. Change a line, swap a name, make them sound even more like you. You can even send the other 2 emails on the other days of the week.</p>
+        </div>
+      </details>
 
-    <div class="faq-item">
-      <h3>Do these cause any MLS or compliance problems?</h3>
-      <p>No listing address is publicized in the email, by design. Your readers reply to you for the actual listing information or a showing, because all conversions happen in conversation.</p>
-      <p><em>You're responsible for following your own local advertising and MLS rules.</em></p>
-    </div>
+      <details>
+        <summary><span class="mark"></span>Do these cause any MLS or compliance problems?</summary>
+        <div class="faq-a">
+          <p>No listing address is publicized in the email, by design. Your readers reply to you for the actual listing information or a showing, because all conversions happen in conversation.</p>
+          <p><em>You're responsible for following your own local advertising and MLS rules.</em></p>
+        </div>
+      </details>
 
-    <div class="faq-item">
-      <h3>Can I cancel?</h3>
-      <p>Anytime, one click, no call needed. Cancel during the trial and you pay nothing.</p>
-    </div>
+      <details>
+        <summary><span class="mark"></span>Can I cancel?</summary>
+        <div class="faq-a">
+          <p>Anytime, one click, no call needed. Cancel during the trial and you pay nothing.</p>
+        </div>
+      </details>
 
-    <div class="faq-item">
-      <h3>When does my first batch of emails arrive?</h3>
-      <p>It lands right in your inbox once you sign up and tell us your market. After that, a fresh batch every Tuesday.</p>
+      <details>
+        <summary><span class="mark"></span>When does my first batch of emails arrive?</summary>
+        <div class="faq-a">
+          <p>It lands right in your inbox once you sign up and tell us your market. After that, a fresh batch every Tuesday.</p>
+        </div>
+      </details>
     </div>
 
     <div class="cta-wrap">
