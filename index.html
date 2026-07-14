@@ -99,7 +99,8 @@
   .us-map .city-halo{ fill:var(--crimson); opacity:.16; animation:mapPulse 3.2s ease-in-out infinite; }
   @keyframes mapPulse{ 0%,100%{ opacity:.10; } 50%{ opacity:.28; } }
   .us-map .city-lbl{ font-family:var(--sans); font-size:11px; fill:var(--muted); }
-  .map-note{ font-size:14.5px; color:var(--light); text-align:center; margin-top:10px; }
+  .map-highlight{ font-family:var(--serif); font-weight:700; font-size:clamp(19px,2.6vw,24px); line-height:1.4; color:var(--text); text-align:center; background:var(--crimson-bg); border:1px solid var(--crimson-border); border-radius:12px; padding:18px 24px; margin:24px auto 0; max-width:640px; }
+  .map-highlight strong{ color:var(--crimson); }
 
   /* ── CTA button ── */
   .cta-wrap{ text-align:center; margin:28px 0 8px; }
@@ -315,7 +316,7 @@
   <g><text class="city-lbl" x="52.4" y="45.9" text-anchor="start">Seattle</text><text class="city-lbl" x="48.0" y="79.2" text-anchor="start">Portland</text><text class="city-lbl" x="51.3" y="202.7" text-anchor="start">San Francisco</text><text class="city-lbl" x="94.4" y="275.5" text-anchor="middle">Los Angeles</text><text class="city-lbl" x="107.9" y="296.7" text-anchor="middle">San Diego</text><text class="city-lbl" x="142.1" y="228.2" text-anchor="start">Las Vegas</text><text class="city-lbl" x="171.4" y="285.0" text-anchor="middle">Phoenix</text><text class="city-lbl" x="182.6" y="155.0" text-anchor="start">Salt Lake City</text><text class="city-lbl" x="268.7" y="171.3" text-anchor="start">Denver</text><text class="city-lbl" x="389.5" y="169.0" text-anchor="middle">Kansas City</text><text class="city-lbl" x="405.9" y="75.3" text-anchor="middle">Minneapolis</text><text class="city-lbl" x="370.9" y="282.2" text-anchor="start">Dallas</text><text class="city-lbl" x="341.1" y="322.2" text-anchor="end">Austin</text><text class="city-lbl" x="379.7" y="343.9" text-anchor="middle">Houston</text><text class="city-lbl" x="453.2" y="189.0" text-anchor="start">St. Louis</text><text class="city-lbl" x="467.2" y="137.2" text-anchor="end">Chicago</text><text class="city-lbl" x="542.4" y="130.0" text-anchor="start">Detroit</text><text class="city-lbl" x="477.8" y="228.3" text-anchor="end">Nashville</text><text class="city-lbl" x="525.6" y="266.8" text-anchor="start">Atlanta</text><text class="city-lbl" x="569.9" y="243.2" text-anchor="start">Charlotte</text><text class="city-lbl" x="531.7" y="359.2" text-anchor="end">Tampa</text><text class="city-lbl" x="563.2" y="349.8" text-anchor="start">Orlando</text><text class="city-lbl" x="578.0" y="394.1" text-anchor="start">Miami</text><text class="city-lbl" x="617.3" y="184.7" text-anchor="start">Washington DC</text><text class="city-lbl" x="622.7" y="167.9" text-anchor="end">Philadelphia</text><text class="city-lbl" x="655.1" y="155.8" text-anchor="start">New York</text><text class="city-lbl" x="691.9" y="129.5" text-anchor="start">Boston</text></g>
 </svg>
     </div>
-    <p class="map-note">Any US market works, from the majors to the small towns.</p>
+    <p class="map-highlight"><strong>Any US city or zip code works.</strong> From the majors to the small towns.</p>
   </div>
 </section>
 
