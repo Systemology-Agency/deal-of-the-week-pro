@@ -151,6 +151,28 @@
     .tl-node{ left:-50px; width:34px; height:34px; font-size:16px; }
     .tl-card{ padding:14px 16px; }
   }
+
+  /* ===== Email gate: capture before the Stripe handoff ===== */
+  .gate-back{ position:fixed; inset:0; background:rgba(9,9,15,0.82); backdrop-filter:blur(4px);
+    display:none; align-items:center; justify-content:center; padding:20px; z-index:100; }
+  .gate-back.open{ display:flex; }
+  .gate{ background:var(--panel); border:1px solid var(--border); border-radius:14px;
+    padding:32px 30px; max-width:440px; width:100%; box-shadow:0 24px 64px rgba(0,0,0,0.5); }
+  .gate h3{ font-size:24px; margin-bottom:8px; }
+  .gate p{ font-size:16px; margin-bottom:20px; }
+  .gate label{ display:block; font-size:14px; color:var(--light); margin-bottom:6px; font-family:var(--sans); }
+  .gate input{ width:100%; font-family:var(--sans); font-size:17px; color:var(--text);
+    background:var(--panel2); border:1px solid var(--border); border-radius:8px; padding:14px 14px; }
+  .gate input:focus{ outline:none; border-color:var(--crimson); }
+  .gate .gate-cta{ width:100%; margin-top:16px; font-family:var(--sans); font-weight:700; font-size:17px;
+    color:var(--crimson-ink); background:var(--crimson); border:0; border-radius:10px; padding:16px;
+    cursor:pointer; }
+  .gate .gate-cta:hover{ background:#943049; }
+  .gate .gate-cta[disabled]{ opacity:.6; cursor:default; }
+  .gate .gate-sub{ font-size:13.5px; color:var(--light); margin:14px 0 0; text-align:center; }
+  .gate .gate-err{ font-size:14px; color:#fca5a5; margin:10px 0 0; min-height:0; }
+  .gate .gate-x{ float:right; background:none; border:0; color:var(--light); font-size:22px;
+    line-height:1; cursor:pointer; padding:0 0 0 12px; }
 </style>
 </head>
 <body>
@@ -173,7 +195,7 @@
       <div class="vsl-inner">
         <div class="play">&#9658;</div>
         <div class="label">Watch: How It Works</div>
-        <p class="note">2 minute walkthrough, video coming soon. Everything you need is in the letter below.</p>
+        <p class="note">Under 4 minutes, video coming soon. Everything you need is in the letter below.</p>
       </div>
     </div>
   </div>
@@ -439,5 +461,106 @@
   </div>
 </footer>
 
+
+<!-- ===== Email gate =====
+     Every CTA on this page used to hand straight off to Stripe, so anyone who
+     didn't finish checkout was invisible forever. Stripe only records an email
+     once the visitor types it on the PAYMENT step — measured 2026-07-14: 6 of 6
+     real abandons carried no email at all. This gate captures the address on
+     Leo's own page first, then passes it into Stripe prefilled. -->
+<div class="gate-back" id="gate-back" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+  <div class="gate">
+    <button class="gate-x" id="gate-x" aria-label="Close">&times;</button>
+    <h3 id="gate-title">Start your free 7-day trial</h3>
+    <p>Where should your Tuesday emails go?</p>
+    <form id="gate-form" novalidate>
+      <label for="gate-email">Email address</label>
+      <input type="email" id="gate-email" name="email" required autocomplete="email"
+             placeholder="you@yourbrokerage.com">
+      <p class="gate-err" id="gate-err" role="alert"></p>
+      <button type="submit" class="gate-cta" id="gate-go">Continue to checkout</button>
+      <p class="gate-sub">Free for 7 days, then $47 a month. Cancel anytime.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var STRIPE  = "https://buy.stripe.com/cNiaEW6TfaY70vLccHd7q0E";
+  var KIT_TAG = "21187700";                    // dow-lead
+  // PUBLIC key, not a secret. This is the same class as a Stripe pk_ — Kit's own
+  // embed forms ship it in client code, and a gate on a static page is
+  // impossible without it. Worst case someone else can add emails to this tag,
+  // which is the standard, accepted risk of any public embed form.
+  var KIT_PUB = "1sNcVDssIRtQ-GnEJiUemg";
+
+  var back  = document.getElementById("gate-back");
+  var form  = document.getElementById("gate-form");
+  var input = document.getElementById("gate-email");
+  var err   = document.getElementById("gate-err");
+  var go    = document.getElementById("gate-go");
+  var lastFocus = null;
+
+  function open(e) {
+    if (e) e.preventDefault();
+    lastFocus = document.activeElement;
+    back.classList.add("open");
+    err.textContent = "";
+    setTimeout(function () { input.focus(); }, 30);
+  }
+  function close() {
+    back.classList.remove("open");
+    if (lastFocus) lastFocus.focus();
+  }
+
+  // Send them on to Stripe with the address prefilled so they never type it twice.
+  function toCheckout(email) {
+    window.location.href = STRIPE + "?prefilled_email=" + encodeURIComponent(email);
+  }
+
+  function valid(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var email = (input.value || "").trim();
+    if (!valid(email)) {
+      err.textContent = "That email doesn't look right.";
+      input.focus();
+      return;
+    }
+    err.textContent = "";
+    go.disabled = true;
+    go.textContent = "One moment…";
+
+    // FAIL OPEN, ALWAYS. Capture is a tracking nicety; checkout is the business.
+    // If Kit is down, slow, or rejects this, the visitor still gets to Stripe —
+    // a broken pipeline must never cost a sale. A lead lost to a Kit outage is
+    // recoverable from the Stripe side; a customer lost to a spinner is not.
+    var done = false;
+    function proceed() { if (!done) { done = true; toCheckout(email); } }
+    setTimeout(proceed, 2500);   // hard ceiling on how long capture may stall a buyer
+
+    fetch("https://api.convertkit.com/v3/tags/" + KIT_TAG + "/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ api_key: KIT_PUB, email: email })
+    }).then(proceed).catch(proceed);
+  });
+
+  // Intercept every CTA on the page — there are four, and they must not drift apart.
+  var ctas = document.querySelectorAll('a.cta[href*="buy.stripe.com"]');
+  for (var i = 0; i < ctas.length; i++) {
+    ctas[i].addEventListener("click", open);
+  }
+
+  document.getElementById("gate-x").addEventListener("click", close);
+  back.addEventListener("click", function (e) { if (e.target === back) close(); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && back.classList.contains("open")) close();
+  });
+})();
+</script>
 </body>
 </html>
