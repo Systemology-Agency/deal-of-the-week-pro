@@ -198,6 +198,10 @@
         <p class="note">Under 4 minutes, video coming soon. Everything you need is in the letter below.</p>
       </div>
     </div>
+    <div class="cta-wrap">
+      <a class="cta" href="https://buy.stripe.com/cNiaEW6TfaY70vLccHd7q0E" target="_blank" rel="noopener noreferrer">Start My Free 7-Day Trial</a>
+      <p class="cta-sub">Free for 7 days, then $47 a month. Cancel anytime.</p>
+    </div>
   </div>
 </section>
 
@@ -549,7 +553,7 @@
     }).then(proceed).catch(proceed);
   });
 
-  // Intercept every CTA on the page — there are four, and they must not drift apart.
+  // Intercept every CTA on the page — there are five, and they must not drift apart.
   var ctas = document.querySelectorAll('a.cta[href*="buy.stripe.com"]');
   for (var i = 0; i < ctas.length; i++) {
     ctas[i].addEventListener("click", open);
