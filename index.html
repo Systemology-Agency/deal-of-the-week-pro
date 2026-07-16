@@ -9,7 +9,7 @@
   /* ===== BAM Bold brand tokens (dark executive canvas, crimson sacred CTA) ===== */
   :root{
     --crimson:#ad3457; --crimson-bg:rgba(173,52,87,0.1); --crimson-border:rgba(173,52,87,0.2); --crimson-ink:#ffffff;
-    --bg:#09090f; --panel:#13141f; --panel2:#1b1c2c; --panel3:#222338; --border:#36375a; --text:#f2f2fc; --muted:#abacc8; --light:#6e6f92;
+    --bg:#09090f; --panel:#13141f; --panel2:#1b1c2c; --panel3:#222338; --border:#36375a; --text:#f2f2fc; --muted:#abacc8; --light:#a2a3c6;
     --green:#22c55e; --green-bg:rgba(34,197,94,0.1);
     --blue:#60a5fa; --blue-bg:rgba(96,165,250,0.1);
     --amber:#fbbf24; --amber-bg:rgba(251,191,36,0.1);
@@ -106,6 +106,11 @@
   .reply-shot{ margin:28px 0 0; }
   .reply-shot img{ width:100%; height:auto; display:block; border:1px solid var(--border); border-radius:14px; }
   .reply-shot figcaption{ font-size:14.5px; color:var(--light); margin-top:14px; text-align:center; max-width:640px; margin-left:auto; margin-right:auto; }
+  .proof-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:34px 0 0; }
+  .proof-grid figure{ margin:0; }
+  .proof-grid img{ width:100%; height:auto; display:block; border:1px solid var(--border); border-radius:14px; }
+  .proof-grid figcaption{ font-size:13.5px; color:var(--light); margin-top:8px; text-align:center; }
+  .proof-note{ font-size:14.5px; color:var(--light); margin-top:18px; text-align:center; }
 
   /* ── CTA button ── */
   .cta-wrap{ text-align:center; margin:28px 0 8px; }
@@ -148,6 +153,7 @@
   @media (max-width:720px){
     section{ padding:40px 0; }
     .grid3{ grid-template-columns:1fr; }
+    .proof-grid{ grid-template-columns:1fr; }
     header.hero{ padding:48px 0 36px; }
     .cta{ display:block; width:100%; }
     .price-card{ padding:24px 18px; }
@@ -251,6 +257,41 @@
       <img src="dow-reply-example.png" loading="lazy" alt="A real Deal of the Week email for a Garden Grove single family home, and the reader's reply the same evening asking for more information on the house and the seller's price">
       <figcaption>Sent at 2:45 PM. By 9:56 PM the reader replied asking for the details and the price. That is a live buyer conversation the agent never had to chase, and every conversion starts with a conversation.</figcaption>
     </figure>
+    <div class="proof-grid">
+      <figure>
+        <img src="dow-proof-1.jpg" loading="lazy" alt="Real Gmail reply to a Deal of the Week email: an investment fund writes a $1.85 million offer on the featured property">
+        <figcaption>An investment fund replied with a written offer. From a weekly email.</figcaption>
+      </figure>
+      <figure>
+        <img src="dow-proof-2.jpg" loading="lazy" alt="Real Gmail reply: an agent says I have a buyer for this property and asks how to arrange a showing">
+        <figcaption>"I have a buyer for this property. How can I arrange a showing?"</figcaption>
+      </figure>
+      <figure>
+        <img src="dow-proof-3.jpg" loading="lazy" alt="Real Gmail reply: a reader says I am interested, for myself, let me know how I can tour">
+        <figcaption>"I am interested, for myself! Let me know how I can tour."</figcaption>
+      </figure>
+      <figure>
+        <img src="dow-proof-4.jpg" loading="lazy" alt="Real Gmail reply: a buyer says for the same kind of home I will pay 2 million and get it today">
+        <figcaption>"I will pay 2M and get it today." A buyer raising their own budget.</figcaption>
+      </figure>
+      <figure>
+        <img src="dow-proof-5.jpg" loading="lazy" alt="Real Gmail reply from a top-producing Realtor: Love this email. Love the tone. Fantastic job.">
+        <figcaption>A top-producing Realtor on the format itself.</figcaption>
+      </figure>
+      <figure>
+        <img src="dow-proof-6.jpg" loading="lazy" alt="Real Gmail reply from a mortgage banker: I like your Deal of the Week emails. Unique way to grasp the recipient's attention.">
+        <figcaption>"Unique way to grasp the recipient's attention."</figcaption>
+      </figure>
+      <figure>
+        <img src="dow-proof-7.jpg" loading="lazy" alt="Real Gmail reply: Leo, your Deal of the Week is a great idea">
+        <figcaption>"YOUR DEAL OF THE WEEK IS A GREAT IDEA"</figcaption>
+      </figure>
+      <figure>
+        <img src="dow-proof-8.jpg" loading="lazy" alt="Real Gmail reply: I like this property way better, just saw it, let's get this one">
+        <figcaption>"Just saw it. Let's get this one."</figcaption>
+      </figure>
+    </div>
+    <p class="proof-note">Every screenshot above is a real reply pulled straight from the inbox. This is what a weekly deal email does to a database.</p>
   </div>
 </section>
 
