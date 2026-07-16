@@ -47,6 +47,14 @@
   .card h3{ font-size:20px; margin-bottom:8px; }
   .card p{ font-size:16px; margin-bottom:0; }
 
+  /* training KPI row */
+  .kpi{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:28px 0 0; }
+  .stat{ background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:20px; }
+  /* values stay on one line: multi-word values wrap below ~360px at a fixed size */
+  .stat .v{ font-family:var(--serif); font-weight:700; font-size:42px; line-height:1.1; color:var(--crimson); margin-bottom:6px; white-space:nowrap; }
+  .stat .l{ font-family:var(--sans); font-size:14.5px; line-height:1.45; color:var(--muted); }
+  .train-note{ margin-top:28px; }
+
   /* anatomy steps */
   .steps{ margin:24px 0 0; }
   .step{ display:flex; gap:16px; padding:18px 0; border-top:1px solid var(--border); }
@@ -82,6 +90,9 @@
   @media (max-width:720px){
     section{ padding:40px 0; }
     .grid3{ grid-template-columns:1fr; }
+    .kpi{ grid-template-columns:repeat(2,1fr); gap:10px; }
+    .stat{ padding:16px; }
+    .stat .v{ font-size:clamp(26px, 8.5vw, 34px); }
     header.hero{ padding:48px 0 36px; }
     .email-box{ padding:20px 16px; }
   }
@@ -117,6 +128,35 @@
         <h3>Consistency is the asset</h3>
         <p>Week after week, your list learns to expect you. That is a lifetime nurture asset, and it compounds.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="training">
+  <div class="wrap">
+    <h2>Why It Writes Better Than Most Agents</h2>
+    <p class="lede">Not because they are bad writers. Because almost nobody will study 248 emails, hold 31 rules in their head, and find a fresh angle every Tuesday for a year. This does, and it gets sharper every send.</p>
+    <div class="kpi">
+      <div class="stat">
+        <div class="v">10</div>
+        <div class="l">Sharran's samples, copied exactly. Not half-remembered.</div>
+      </div>
+      <div class="stat">
+        <div class="v">248</div>
+        <div class="l">Real agent emails studied line by line</div>
+      </div>
+      <div class="stat">
+        <div class="v">25</div>
+        <div class="l">Ways to write it. Started at 3. Most agents reuse one.</div>
+      </div>
+      <div class="stat">
+        <div class="v">31</div>
+        <div class="l">Rules enforced every send. Nobody remembers 31 rules.</div>
+      </div>
+    </div>
+    <div class="train-note">
+      <p>The framework was never the hard part. Doing it every week is. This reads the full listing for what a buyer actually wants, picks the angle that fits, and writes in the register that matches the price, because an entry condo and a trophy home never sound the same.</p>
+      <p>It also keeps learning. Every send feeds back what got opened, and that picks the next one. The roster started at 3 ways to write a deal. It is at 25 and still growing. Most agents are still sending the email they sent last year.</p>
     </div>
   </div>
 </section>
