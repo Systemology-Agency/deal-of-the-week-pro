@@ -39,6 +39,9 @@
   header.hero{ padding:64px 0 48px; text-align:center; background:radial-gradient(circle at 50% 0%, rgba(173,52,87,0.12), transparent 60%); }
   header.hero h1{ font-size:clamp(32px,5.6vw,52px); line-height:1.22; margin-bottom:20px; }
   header.hero .deck{ font-family:var(--sans); font-size:clamp(18px,2.7vw,22px); color:var(--muted); max-width:680px; margin:0 auto; }
+  header.hero .hero-video{ max-width:680px; margin:32px auto 0; }
+  header.hero .hero-video .frame{ position:relative; width:100%; aspect-ratio:16/9; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:#000; }
+  header.hero .hero-video iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
 
   /* section headers */
   h2{ font-size:clamp(28px,4vw,38px); margin-bottom:22px; }
@@ -114,6 +117,11 @@
     <span class="kicker">The Framework</span>
     <h1>The Deal of the Week Framework</h1>
     <p class="deck">The Lifetime Nurture email framework built by Sharran Srivatsaa. Every email Deal of the Week Pro delivers follows it exactly: what goes in, what stays out, and why it earns replies.</p>
+    <div class="hero-video">
+      <div class="frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/OU3-IUMyoCc" title="The Deal of the Week Framework" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
   </div>
 </header>
 
