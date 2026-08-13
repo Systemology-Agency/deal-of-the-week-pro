@@ -611,12 +611,16 @@
   "use strict";
 
   var STRIPE  = "https://buy.stripe.com/cNiaEW6TfaY70vLccHd7q0E";
-  var KIT_TAG = "21187700";                    // dow-lead
+  var KIT_TAG = "22428362";                    // dow-lead, OTA Kit account (2827559)
   // PUBLIC key, not a secret. This is the same class as a Stripe pk_ — Kit's own
   // embed forms ship it in client code, and a gate on a static page is
   // impossible without it. Worst case someone else can add emails to this tag,
   // which is the standard, accepted risk of any public embed form.
-  var KIT_PUB = "1sNcVDssIRtQ-GnEJiUemg";
+  // Repointed 2026-08-13: the original tag (21187700, leochenre.com Kit account)
+  // was deleted from Kit between 9:04-9:10 PM on 2026-08-12 (cause unconfirmed).
+  // Recreated on the OTA account per Leo's call, matching the dow-pro sender
+  // identity which already lives there.
+  var KIT_PUB = "0HhILSiEUf8h_VZudO8QLQ";
 
   var back  = document.getElementById("gate-back");
   var form  = document.getElementById("gate-form");
